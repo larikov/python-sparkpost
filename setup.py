@@ -6,11 +6,11 @@ with open('README.rst', 'r', 'utf-8') as f:
 
 setup(
     name='sparkpost',
-    version='1.1.0',
+    version='1.1.1',
     author='Message Systems',
     author_email='appteam@messagesystems.com',
     packages=find_packages(),
-    url='https://github.com/SparkPost/python-sparkpost',
+    url='https://github.com/larikov/python-sparkpost',
     license='Apache 2.0',
     description='SparkPost Python API client',
     long_description=readme,
