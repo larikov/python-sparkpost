@@ -93,17 +93,21 @@ class Transmissions(Resource):
         return formatted_copies
 
     def _extract_attachments(self, attachments):
-        formatted_attachments = []
-        for attachment in attachments:
-            formatted_attachment = {}
-            formatted_attachment['type'] = attachment.get('type')
-            formatted_attachment['name'] = attachment.get('name')
-            if 'filename' in attachment:
-                formatted_attachment['data'] = self._get_base64_from_file(
-                    attachment['filename'])
-            else:
-                formatted_attachment['data'] = attachment.get('data')
-            formatted_attachments.append(formatted_attachment)
+        if attachments:
+            formatted_attachments = []
+            for attachment in attachments:
+                formatted_attachment = {}
+                formatted_attachment['type'] = attachment.get('type')
+                formatted_attachment['name'] = attachment.get('name')
+                if 'filename' in attachment:
+                    formatted_attachment['data'] = self._get_base64_from_file(
+                        attachment['filename'])
+                else:
+                    formatted_attachment['data'] = attachment.get('data')
+                formatted_attachments.append(formatted_attachment)
+        else:
+            formatted_attachments = None
+            
         return formatted_attachments
 
     def _get_base64_from_file(self, filename):
