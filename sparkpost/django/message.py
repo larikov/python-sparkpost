@@ -31,6 +31,9 @@ class SparkPostMessage(dict):
 
         if message.cc:
             formatted['cc'] = message.cc
+            
+        if message.content_subtype == 'html':
+            formatted['html'] = message.body
 
         if message.bcc:
             formatted['bcc'] = message.bcc
