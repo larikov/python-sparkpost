@@ -6,9 +6,9 @@ with open('README.rst', 'r', 'utf-8') as f:
 
 setup(
     name='sparkpost',
-    version='1.1.1',
-    author='Message Systems',
-    author_email='appteam@messagesystems.com',
+    version='1.1.2',
+    author='Alexander Larikov',
+    author_email='alexander@larikov.com',
     packages=find_packages(),
     url='https://github.com/larikov/python-sparkpost',
     license='Apache 2.0',
